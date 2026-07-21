@@ -1,6 +1,7 @@
 # 🐳 MELS Portal — Dockerized Portfolio
 
 [![CI](https://github.com/MELS-010101/mels-portal-docker/actions/workflows/deploy.yml/badge.svg)](https://github.com/MELS-010101/mels-portal-docker/actions)
+[![Docker CI](https://github.com/MELS-010101/mels-portal-docker/actions/workflows/docker-ci.yml/badge.svg)](https://github.com/MELS-010101/mels-portal-docker/actions)
 [![Live](https://img.shields.io/badge/live-GitHub%20Pages-0052FF)](https://mels-010101.github.io/mels-portal-docker/)
 [![Docker](https://img.shields.io/badge/containerized-nginx%3Aalpine-2496ED?logo=docker&logoColor=white)](Dockerfile)
 

@@ -1,0 +1,24 @@
+name: Docker CI (build & smoke test)
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t mels-portal:ci .
+
+      - name: Smoke test (запустить и проверить, что сайт отдаёт 200)
+        run: |
+          docker run -d --name ci-test -p 8080:80 mels-portal:ci
+          curl --retry 6 --retry-delay 2 --retry-connrefused -f http://localhost:8080/
+          docker rm -f ci-test
