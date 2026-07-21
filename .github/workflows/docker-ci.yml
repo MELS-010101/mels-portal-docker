@@ -20,5 +20,5 @@ jobs:
       - name: Smoke test (запустить и проверить, что сайт отдаёт 200)
         run: |
           docker run -d --name ci-test -p 8080:80 mels-portal:ci
-          curl --retry 6 --retry-delay 2 --retry-connrefused -f http://localhost:8080/
+            curl --retry 10 --retry-delay 2 --retry-all-errors --retry-connrefused -fsS http://localhost:8080/
           docker rm -f ci-test
