@@ -1,0 +1,20 @@
+services:
+  mels-portal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mels-portal-container
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Moscow
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    labels:
+      - "com.mels.portal.description=MELS Infrastructure Portfolio"
+      - "com.mels.portal.version=1.0"

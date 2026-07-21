@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script>
+    // Проверяем сохранённую тему при загрузке
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MELS — Infrastructure Engineer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <span class="logo-mark">M</span>
+                <span class="logo-text">MELS</span>
+            </div>
+
+           <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<nav class="nav" id="main-nav">
+    <a href="#work" class="nav-link" data-i18n="nav.works">Работы</a>
+    <a href="#about" class="nav-link" data-i18n="nav.about">Обо мне</a>
+    <a href="#contact" class="nav-link" data-i18n="nav.contact">Контакты</a>
+</nav>
+
+            <div class="header-actions">
+                <div class="lang-switch" onclick="toggleLanguage()">
+                    <span class="lang-active" id="lang-current">RU</span>
+                    <span class="lang-divider">/</span>
+                    <span class="lang-inactive" id="lang-other">EN</span>
+                </div>
+                <div class="theme-switch" onclick="toggleTheme()">
+                    <span class="theme-icon" id="theme-icon">🌙</span>
+                </div>
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    <span class="status-text" data-i18n="header.available">Available for projects</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-label" data-i18n="hero.label">Infrastructure Engineer · DevOps</div>
+            <h1 class="hero-title">
+                <span data-i18n="hero.title1">Проектирую</span><br>
+                <span data-i18n="hero.title2">надёжную</span><br>
+                <span class="accent" data-i18n="hero.title3">инфраструктуру</span>
+            </h1>
+            <p class="hero-description" data-i18n="hero.description">
+                Windows Server, Active Directory, Docker, автоматизация.
+                Превращаю сложные системы в понятные и управляемые решения.
+            </p>
+            <div class="hero-cta">
+                <a href="#work" class="btn-primary">
+                    <span data-i18n="hero.cta1">Смотреть проекты</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="#contact" class="btn-secondary" data-i18n="hero.cta2">Связаться</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">6</div>
+                    <div class="stat-label" data-i18n="hero.stat1">модулей пройдено</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-value">15+</div>
+                    <div class="stat-label" data-i18n="hero.stat2">технологий</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-value">2026</div>
+                    <div class="stat-label" data-i18n="hero.stat3">год запуска</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK / PORTFOLIO GRID -->
+    <section class="work" id="work">
+        <div class="work-inner">
+            <div class="section-header">
+                <div class="section-label" data-i18n="work.label">01 — Избранные работы</div>
+                <h2 class="section-title" data-i18n="work.title">Проекты</h2>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-meta">
+                            <span class="project-year">2026</span>
+                            <span class="project-tag" data-i18n="work.tag1">Windows Server</span>
+                        </div>
+                        <h3 class="project-title">MELS Corp Infrastructure</h3>
+                        <p class="project-description" data-i18n="work.desc1">
+                            Полноценная IT-инфраструктура: Active Directory, Group Policy, IIS, Firewall, резервное копирование. Развёрнуто с нуля на Windows Server 2022.
+                        </p>
+                        <div class="project-tech">
+                            <span>AD DS</span>
+                            <span>GPO</span>
+                            <span>IIS</span>
+                            <span>PowerShell</span>
+                        </div>
+                        <a href="https://github.com/MELS-010101/windows-server-ad-lab" target="_blank" class="project-link">
+                            <span data-i18n="work.link1">Открыть на GitHub</span>
+                            <span class="project-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-meta">
+                            <span class="project-year">2026</span>
+                            <span class="project-tag" data-i18n="work.tag2">Docker</span>
+                        </div>
+                        <h3 class="project-title" data-i18n="work.project2">Docker Lab</h3>
+                        <p class="project-description" data-i18n="work.desc2">
+                            Практика контейнеризации: кастомные образы, Dockerfile, проброс портов, работа с Nginx. Первый шаг в мир DevOps.
+                        </p>
+                        <div class="project-tech">
+                            <span>Docker</span>
+                            <span>Dockerfile</span>
+                            <span>Nginx</span>
+                            <span>Alpine</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span data-i18n="work.more">Подробнее</span>
+                            <span class="project-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-meta">
+                            <span class="project-year">2026</span>
+                            <span class="project-tag" data-i18n="work.tag3">Linux</span>
+                        </div>
+                        <h3 class="project-title" data-i18n="work.project3">Linux & Nginx Web Server</h3>
+                        <p class="project-description" data-i18n="work.desc3">
+                            Настройка веб-сервера Nginx на Ubuntu, UFW firewall, rsync-бэкапы. Базовая административная практика.
+                        </p>
+                        <div class="project-tech">
+                            <span>Ubuntu</span>
+                            <span>Nginx</span>
+                            <span>UFW</span>
+                            <span>rsync</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span data-i18n="work.more">Подробнее</span>
+                            <span class="project-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-inner">
+            <div class="section-header">
+                <div class="section-label" data-i18n="about.label">02 — Обо мне</div>
+                <h2 class="section-title" data-i18n="about.title">Подход</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="about-lead" data-i18n="about.lead">
+                        Учуcь на сисадмина, чтобы стать DevOps-инженером.
+                    </p>
+                    <p data-i18n="about.text1">
+                        Мне интересна инфраструктура как код, автоматизация рутины и построение систем, которые работают без вмешательства человека. Каждый проект — это шаг от теории к реальной практике.
+                    </p>
+                    <p data-i18n="about.text2">
+                        Верю, что хороший инженер — это не тот, кто знает всё, а тот, кто умеет быстро разбираться и доводить задачи до конца.
+                    </p>
+                </div>
+
+                <div class="about-stack">
+                    <div class="stack-category">
+                        <div class="stack-label" data-i18n="about.stack1">Операционные системы</div>
+                        <div class="stack-items">
+                            <span>Windows Server 2022</span>
+                            <span>Ubuntu Linux</span>
+                            <span>WSL</span>
+                        </div>
+                    </div>
+                    <div class="stack-category">
+                        <div class="stack-label" data-i18n="about.stack2">Инфраструктура</div>
+                        <div class="stack-items">
+                            <span>Active Directory</span>
+                            <span>Group Policy</span>
+                            <span>DNS / DHCP</span>
+                        </div>
+                    </div>
+                    <div class="stack-category">
+                        <div class="stack-label" data-i18n="about.stack3">DevOps</div>
+                        <div class="stack-items">
+                            <span>Docker</span>
+                            <span>Git / GitHub</span>
+                            <span>PowerShell</span>
+                            <span>Bash</span>
+                        </div>
+                    </div>
+                    <div class="stack-category">
+                        <div class="stack-label" data-i18n="about.stack4">Веб</div>
+                        <div class="stack-items">
+                            <span>Nginx</span>
+                            <span>IIS</span>
+                            <span>HTML / CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <div class="section-header">
+                <div class="section-label" data-i18n="contact.label">03 — Связь</div>
+                <h2 class="section-title" data-i18n="contact.title">Контакты</h2>
+            </div>
+
+            <p class="contact-lead" data-i18n="contact.lead">
+                Открыт к предложениям, коллаборациям и интересным задачам.
+            </p>
+
+            <div class="contact-links">
+                <a href="https://github.com/MELS-010101" target="_blank" class="contact-link">
+                    <span class="contact-link-label">GitHub</span>
+                    <span class="contact-link-value">github.com/MELS-010101</span>
+                    <span class="contact-arrow">↗</span>
+                </a>
+                <a href="#" class="contact-link">
+                    <span class="contact-link-label" data-i18n="contact.telegram">Telegram</span>
+                    <span class="contact-link-value">@mels</span>
+                    <span class="contact-arrow"></span>
+                </a>
+                <a href="#" class="contact-link">
+                    <span class="contact-link-label" data-i18n="contact.email">Email</span>
+                    <span class="contact-link-value">mels@example.com</span>
+                    <span class="contact-arrow">↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="footer-mark">M</span>
+                <span>© 2026 MELS</span>
+            </div>
+            <div class="footer-right">
+                <span class="footer-mono" data-i18n="footer.text">Infrastructure · Automation · DevOps</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="../js/app.js"></script>
+
+</body>
+</html>
